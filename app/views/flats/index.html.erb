@@ -1,0 +1,38 @@
+<div class="container">
+  <h1>All Flats</h1>
+  <p>All <%= pluralize(@flats.count,'flat') %> </p>
+
+  <div class="flat-cards">
+    <% @flats.each do |flat| %>
+      <div class="flat-card">
+        <div class="img" style="background-image: url(<%= flat.img_url %>)"></div>
+
+        <div class="card-content">
+          <h2><%= flat.name %></h2>
+
+          <p><%= flat.address %></p>
+
+          <span><%= flat.price_per_night %></span>
+          <span><%= flat.number_of_guests %></span>
+        </div>
+
+        <div class="card-footer">
+          <%= link_to 'More Info', flat_path(flat), class: 'primary-clr' %>
+          <%= link_to 'Edit', edit_flat_path(flat), class: 'warning-clr' %>
+          <%= link_to 'Remove', flat_path(flat), method: :delete, class: 'danger-clr' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<!--
+t.string "name"
+t.string "address"
+t.text "description"
+t.integer "price_per_night"
+t.integer "number_of_guests"
+style="background-image: url( flat.img_url)
+
+-->

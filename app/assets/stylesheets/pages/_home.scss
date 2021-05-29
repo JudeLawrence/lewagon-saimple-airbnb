@@ -1,0 +1,12 @@
+.container {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.flat-cards {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(260px, 1fr) );
+  column-gap: 15px;
+  row-gap: 24px;
+
+}
